@@ -5,11 +5,13 @@ const sideBar: CSSProperties = {
     height: "100vh",
     width: "17%",
     minWidth: "100px",
+    margin: "10px",
     backgroundColor: palette.background,
     color: palette.primaryText,
     borderWidth: "3px",
     borderStyle: "solid",
     borderColor: palette.border,
+    boxShadow: `0 0 10px ${palette.primaryText}, 0 0 20px ${palette.primaryText}`,
 }
 
 const styles: {[key: string]: CSSProperties} = {
