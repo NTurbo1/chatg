@@ -1,4 +1,6 @@
-import styles from "./style.module.css"
+import { Outlet } from "react-router"
+import styles from "@pages/DashBoard/style.ts"
+import { SideNavBar } from "@components/SideNavBar/SideNavBar.tsx"
 
 interface IProps {
 
@@ -6,8 +8,11 @@ interface IProps {
 
 export const DashBoardPage = (props: IProps) => {
     return (
-        <div className={styles.page}>
-            <div style={{fontSize: "25px", textAlign: "center", padding: "10px"}}>TODO: Dashboard page</div>
-        </div>
+        <>
+            <div style={styles.page}>
+                <SideNavBar />
+                <Outlet />
+            </div>
+        </>
     )
 }

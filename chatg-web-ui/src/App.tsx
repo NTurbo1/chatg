@@ -4,7 +4,8 @@ import { DashBoardPage } from "./pages/DashBoard/DashBoardPage.tsx";
 const App = () => {
     return (
         <Routes>
-            <Route path="/" element={<DashBoardPage />} />
+            <Route path="/" element={<DashBoardPage />}>
+            </Route>
         </Routes>
     )
 }

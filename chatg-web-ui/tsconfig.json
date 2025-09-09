@@ -45,5 +45,14 @@
     "allowImportingTsExtensions": true,
 
     "noEmit": true,
+
+    // Import path configs
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@features/*": ["src/features/*"],
+      "@style/*": ["src/style/*"],
+      "@pages/*": ["src/pages/*"],
+    }
   }
 }
