@@ -42,7 +42,8 @@
     "skipLibCheck": true,
 
     // Import configs
-    "noEmit": true,
     "allowImportingTsExtensions": true,
+
+    "noEmit": true,
   }
 }

@@ -1,10 +1,12 @@
-import { someFunction } from "./util.ts";
+import { Routes, Route } from "react-router"
+import { DashBoardPage } from "./pages/DashBoard/DashBoardPage.tsx";
 
-function App() {
-  someFunction({ firstName: "John", lastName: "Smith"})
-  return (
-    <div><h1>Hello World!</h1></div>
-  )
+const App = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<DashBoardPage />} />
+        </Routes>
+    )
 }
 
-export default App
+export default App;
