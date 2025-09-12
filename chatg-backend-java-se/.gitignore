@@ -1,0 +1,6 @@
+# editor files
+.idea
+
+# project filest
+target
+dependency-reduced-pom.xml
