@@ -1,0 +1,17 @@
+services:
+    db:
+        image: postgres:15
+        container_name: chatg_postgres_db
+        restart: always
+        environment:
+            POSTGRES_USER: ${CHATG_POSTGRES_USER}
+            POSTGRES_PASSWORD: ${CHATG_POSTGRES_PASSWORD}
+            POSTGRES_DB: ${CHATG_POSTGRES_DB}
+        ports:
+            - ${CHATG_POSTGRES_DB_PORT}:5432
+
+        volumes:
+            - postgres_data:${CHATG_POSTGRES_DATA_CONTAINER_PATH}
+
+volumes:
+    postgres_data:
