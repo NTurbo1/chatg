@@ -1,3 +1,16 @@
 spring:
-  application:
-    name: chatg-backend
+    application:
+        name: chatg-backend
+    datasource:
+        url: ${CHATG_DATASOURCE_URL}
+        username: ${CHATG_POSTGRES_USER}
+        password: ${CHATG_POSTGRES_PASSWORD}
+
+    jpa:
+        hibernate:
+            ddl-auto: update # TODO: Good for now. Change it to 'none' or 'validate' later when using db migrations
+        show-sql: true # Good for debugging
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format-sql: true

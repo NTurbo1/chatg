@@ -12,6 +12,8 @@ export CHATG_PGADMIN_PASSWORD?=admin
 export CHATG_PGADMIN_PORT?=8342
 export CHATG_PGADMIN_DATA_CONTAINER_PATH?=/var/lib/pgadmin
 
+export CHATG_DATASOURCE_URL?=jdbc:postgresql://localhost:$(CHATG_POSTGRES_DB_PORT)/$(CHATG_POSTGRES_DB)
+
 run:
 	docker compose up -d
 	mvn spring-boot:run
