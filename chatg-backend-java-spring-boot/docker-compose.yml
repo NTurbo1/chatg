@@ -13,5 +13,20 @@ services:
         volumes:
             - postgres_data:${CHATG_POSTGRES_DATA_CONTAINER_PATH}
 
+    pgadmin:
+        image: dpage/pgadmin4:latest
+        container_name: chatg_pgadmin
+        restart: always
+        environment:
+            PGADMIN_DEFAULT_EMAIL: ${CHATG_PGADMIN_EMAIL:-admin@admin.com}
+            PGADMIN_DEFAULT_PASSWORD: ${CHATG_PGADMIN_PASSWORD:-admin}
+        ports:
+            - ${CHATG_PGADMIN_PORT:-8342}:80
+        depends_on:
+            - db
+        volumes:
+            - pgadmin_data:${CHATG_PGADMIN_DATA_CONTAINER_PATH}
+
 volumes:
     postgres_data:
+    pgadmin_data:
