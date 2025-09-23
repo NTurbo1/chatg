@@ -9,10 +9,9 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
-    "types": [],
     // For nodejs:
     // "lib": ["esnext", "dom"],
-    // "types": ["node"],
+    "types": ["node"],
     // and npm install -D @types/node
 
     // Other Outputs
@@ -53,6 +52,10 @@
       "@features/*": ["src/features/*"],
       "@style/*": ["src/style/*"],
       "@pages/*": ["src/pages/*"],
+      "@log/*": ["src/log/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@context/*": ["src/context/*"],
+      "@common/*": ["src/common/*"],
     }
   }
 }

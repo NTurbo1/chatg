@@ -7,7 +7,6 @@ const page: CSSProperties = {
     backgroundColor: palette.background,
     color: palette.primaryText,
     display: "flex",
-    flexDirection: "column",
 }
 
 const styles: {[key: string]: CSSProperties} = {
