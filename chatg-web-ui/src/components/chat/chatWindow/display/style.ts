@@ -12,7 +12,14 @@ const displayContainer: CSSProperties = {
 
 const messageDisplay: CSSProperties = {
     margin: "0 25%",
-    height: "100%",
+    maxHeight: "1000px",
+    padding: "20px",
+
+    overflow: "auto",
+
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
 
     borderWidth: "3px",
     borderStyle: "solid",
