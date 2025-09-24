@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import { MessageInput } from "@common/input/message/MessageInput.tsx"
+import { SendMessageForm } from "@common/form/message/SendMessageForm.tsx"
 import { ChatMessageDisplay } from "@components/chat/chatWindow/display/ChatMessageDisplay.tsx"
 import { styles } from "@components/chat/chatWindow/style.ts"
 
@@ -16,10 +16,7 @@ export const ChatWindow = (props: IProps) => {
             <div style={styles.modal}>
                 CHAT MODAL
                 <ChatMessageDisplay />
-                <MessageInput 
-                    messageInput={messageInput} 
-                    setMessageInput={ setMessageInput }
-                />
+                <SendMessageForm messageInput={messageInput} setMessageInput={setMessageInput} />
             </div>
         </div>
     )

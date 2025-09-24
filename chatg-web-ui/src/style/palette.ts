@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react"
+
 const palette = {
     background: "#0a0a0a",
     primaryText: "#00ff41",
@@ -10,3 +12,5 @@ const palette = {
 }
 
 export default palette
+
+export type TStyles = {[key: string]: CSSProperties}
