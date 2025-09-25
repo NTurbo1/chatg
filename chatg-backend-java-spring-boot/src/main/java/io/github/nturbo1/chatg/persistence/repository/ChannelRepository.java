@@ -5,5 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import io.github.nturbo1.chatg.persistence.entity.Channel;
 
+import java.util.Optional;
+
 @Repository
-public interface ChannelRepository extends JpaRepository<Channel, Long> {}
+public interface ChannelRepository extends JpaRepository<Channel, Long> {
+	Optional<Channel> findByName(String name);
+}

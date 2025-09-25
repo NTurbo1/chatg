@@ -1,0 +1,30 @@
+databaseChangeLog:
+    - schema: chatg
+    - changeSet:
+        id: 1
+        author: nturbo1
+        changes:
+            - createSequence:
+                sequenceName: channel_seq
+                startValue: 1
+                incrementBy: 50
+
+    - changeSet:
+        id: 2
+        author: nturbo1
+        changes:
+            - createTable:
+                tableName: channel
+                columns:
+                    - column:
+                        name: id
+                        type: BIGINT
+                        constraints:
+                            primaryKey: true
+
+                    - column:
+                        name: name
+                        type: VARCHAR(1024)
+                        constraints:
+                            nullable: false
+                            unique: true

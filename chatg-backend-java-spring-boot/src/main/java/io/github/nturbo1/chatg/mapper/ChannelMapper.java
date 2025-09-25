@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 
 import io.github.nturbo1.chatg.service.dto.ChannelDto;
 import io.github.nturbo1.chatg.persistence.entity.Channel;
+import io.github.nturbo1.chatg.controller.request.ChannelRequest;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -26,5 +27,19 @@ public final class ChannelMapper {
 		}
 
 		return list;
+	}
+
+	public static Channel map(ChannelDto dto)
+	{
+		return Channel.builder()
+				.name(dto.getName())
+				.build();
+	}
+
+	public static ChannelDto map(ChannelRequest req)
+	{
+		return ChannelDto.builder()
+				.name(req.name())
+				.build();
 	}
 }

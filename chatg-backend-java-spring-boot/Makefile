@@ -17,3 +17,7 @@ export CHATG_DATASOURCE_URL?=jdbc:postgresql://localhost:$(CHATG_POSTGRES_DB_POR
 run:
 	docker compose up -d
 	mvn spring-boot:run
+
+run-debug:
+	docker compose up -d
+	mvn spring-boot:run -Dspring-boot.run.arguments="--logging.level.io.github.nturbo1=DEBUG"

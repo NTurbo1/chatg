@@ -2,13 +2,17 @@ package io.github.nturbo1.chatg.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.MediaType;
 import lombok.RequiredArgsConstructor;
 
+import io.github.nturbo1.chatg.controller.request.ChannelRequest;
 import io.github.nturbo1.chatg.service.ChannelService;
 import io.github.nturbo1.chatg.service.dto.ChannelDto;
+import io.github.nturbo1.chatg.mapper.ChannelMapper;
 
 import java.util.List;
 
@@ -28,5 +32,15 @@ public class ChannelController
 				.ok()
 				.contentType(MediaType.APPLICATION_JSON)
 				.body(channels);
+	}
+
+	@PostMapping("/channels")
+	public ResponseEntity<Boolean> createChannel(@RequestBody ChannelRequest req) {
+		boolean created = channelService.createChannel(ChannelMapper.map(req));
+
+		return ResponseEntity
+				.ok()
+				.contentType(MediaType.APPLICATION_JSON)
+				.body(created);
 	}
 }

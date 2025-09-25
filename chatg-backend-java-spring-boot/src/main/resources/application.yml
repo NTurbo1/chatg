@@ -8,9 +8,13 @@ spring:
 
     jpa:
         hibernate:
-            ddl-auto: update # TODO: Good for now. Change it to 'none' or 'validate' later when using db migrations
+            ddl-auto: none
         show-sql: true # Good for debugging
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.PostgreSQLDialect
                 format-sql: true
+
+    liquibase:
+        default-schema: chatg
+        change-log: classpath:db/changelog/db.changelog-master.yml
