@@ -21,3 +21,6 @@ run:
 run-debug:
 	docker compose up -d
 	mvn spring-boot:run -Dspring-boot.run.arguments="--logging.level.io.github.nturbo1=DEBUG"
+
+stop-docker-services:
+	docker compose stop

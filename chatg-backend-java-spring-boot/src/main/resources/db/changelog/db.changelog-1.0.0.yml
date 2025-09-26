@@ -1,5 +1,4 @@
 databaseChangeLog:
-    - schema: chatg
     - changeSet:
         id: 1
         author: nturbo1
@@ -10,7 +9,16 @@ databaseChangeLog:
                 incrementBy: 50
 
     - changeSet:
-        id: 2
+          id: 2
+          author: nturbo1
+          changes:
+              - createSequence:
+                    sequenceName: chat_user_seq
+                    startValue: 1
+                    incrementBy: 50
+
+    - changeSet:
+        id: 3
         author: nturbo1
         changes:
             - createTable:
@@ -28,3 +36,35 @@ databaseChangeLog:
                         constraints:
                             nullable: false
                             unique: true
+
+    -   changeSet:
+            id: 4
+            author: nturbo1
+            changes:
+                -   createTable:
+                        tableName: chat_user
+                        columns:
+                            -   column:
+                                    name: id
+                                    type: BIGINT
+                                    constraints:
+                                        primaryKey: true
+
+                            -   column:
+                                    name: username
+                                    type: VARCHAR(512)
+                                    constraints:
+                                        nullable: false
+                                        unique: true
+
+                            - column:
+                                    name: firstname
+                                    type: VARCHAR(1024)
+                                    constraints:
+                                        nullable: false
+
+                            - column:
+                                  name: lastname
+                                  type: VARCHAR(1024)
+                                  constraints:
+                                      nullable: false

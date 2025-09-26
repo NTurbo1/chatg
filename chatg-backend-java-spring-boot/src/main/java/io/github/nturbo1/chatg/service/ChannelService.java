@@ -40,8 +40,7 @@ public class ChannelService
 	private void assertChannel(Channel channel)
 	{
 		if (channel == null) {
-			log.error("Channel repository save method returned null, accepting it as channel creation fail.");
-			throw new RuntimeException("Channel was not created. Please, try again in a few minutes.");
+			throw new RuntimeException("Channel entity shouldn't be null!");
 		}
 
 		log.debug("Created a new channel entity {}", channel);
